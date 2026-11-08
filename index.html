@@ -146,7 +146,7 @@ footer a{color:#9cc0ff}
 <footer><a href="https://www.instagram.com/naf.pos.erp/" target="_blank" rel="noopener">@naf.pos.erp</a> · NAF Bito ERP hamkori</footer>
 </div>
 
-<div class="bar"><a class="btn g" href="tel:+998330020213" data-call>📞 Qo'ng'iroq</a><a class="btn p" href="#forma">Bepul tahlil</a></div>
+<div class="bar"><a class="btn g" href="tel:+998330020213" data-call>📞 Qo'ng'iroq</a><a class="btn p" id="barApply" href="#forma">Bepul tahlil</a></div>
 
 <script>
 const SUBMIT_URL = "https://geron-wheat.vercel.app/api/hook/1b33e096aeef4604af24613b411ea506"; // Geron CRM: Naf pro
@@ -154,6 +154,8 @@ const track=(ev,data,opt)=>{ try{ if(window.fbq) fbq('track',ev,data||{},opt||{}
 document.querySelectorAll('[data-call]').forEach(a=>a.addEventListener('click',()=>track('Contact',{content_name:'call'})));
 
 const $=id=>document.getElementById(id);
+// Forma ekranda ko'ringanda pastdagi "Bepul tahlil" tugmasi yashirinadi (ikki xil bir xil tugma bo'lmasin)
+if('IntersectionObserver' in window){ new IntersectionObserver(es=>{ $('barApply').style.display=es[0].isIntersecting?'none':''; },{threshold:.25}).observe($('forma')); }
 const phone=$('phone');
 phone.addEventListener('input',()=>{
   let d=phone.value.replace(/\D/g,''); if(d.startsWith('998')) d=d.slice(3); d=d.slice(0,9);
