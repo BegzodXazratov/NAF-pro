@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#06142b">
+<title>NAF | Biznesni avtomatlashtirish — Bepul tahlil</title>
+<meta name="description" content="Ombor minuslari va tartibsizlikni kamaytiring. Bito ERP rasmiy hamkori NAF biznesingizni bepul tahlil qiladi. Namangan, Andijon, Farg'ona.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#06142b;--bg2:#0a1d3d;--card:#0d2347;--line:rgba(255,255,255,.12);--ink:#fff;--mut:#a9b9d3;--blue:#2f7bf5;--blue2:#1f5fd1;--green:#25d366;--danger:#ff9d8c}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;padding-bottom:84px}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+header{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.04em;font-size:22px}
+.logo i{font-style:normal;color:#5b9bff}
+.logo small{display:block;font-weight:500;font-size:10px;letter-spacing:.16em;color:var(--mut);text-transform:uppercase}
+.tel{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);padding:9px 14px;border-radius:999px;font-weight:600;font-size:14px}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:start;padding:26px 0 54px}
+.badge{display:inline-block;font-size:12px;font-weight:600;color:#9cc0ff;background:rgba(47,123,245,.14);border:1px solid rgba(47,123,245,.4);padding:6px 12px;border-radius:999px;margin-bottom:16px}
+h1{font-size:clamp(30px,5.4vw,52px);line-height:1.08;font-weight:800;letter-spacing:-.02em}
+h1 em{font-style:normal;color:#5b9bff}
+.lead{color:var(--mut);font-size:18px;margin:16px 0 22px;max-width:520px}
+.ticks{list-style:none;display:grid;gap:10px;margin-bottom:24px}
+.ticks li{display:flex;gap:10px;font-weight:500}
+.ticks li:before{content:"✓";flex:none;width:22px;height:22px;border-radius:50%;background:rgba(37,211,102,.16);color:var(--green);display:grid;place-items:center;font-size:13px;font-weight:800;margin-top:1px}
+.btnrow{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:16px 24px;border-radius:14px;font-weight:700;font-size:16px;border:0;cursor:pointer;font-family:inherit}
+.btn.p{background:var(--blue);color:#fff;box-shadow:0 10px 28px rgba(47,123,245,.38)}
+.btn.p:hover{background:var(--blue2)}
+.btn.g{background:var(--green);color:#052b14}
+.btn.o{border:1px solid var(--line);background:transparent;color:#fff}
+.note{color:var(--mut);font-size:13px;margin-top:12px}
+.formcard{background:linear-gradient(180deg,#0f2a56,#0b1f42);border:1px solid rgba(255,255,255,.16);border-radius:22px;padding:24px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.formcard h2{font-size:22px;line-height:1.2;margin-bottom:4px}
+.formcard p.s{color:var(--mut);font-size:14px;margin-bottom:16px}
+label{display:block;font-size:13px;font-weight:600;margin:14px 0 6px;color:#d6e2f6}
+input,select{width:100%;padding:15px 14px;border-radius:12px;border:1px solid var(--line);background:#071733;color:#fff;font-size:16px;font-family:inherit;outline:none}
+select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,#9cc0ff 50%),linear-gradient(135deg,#9cc0ff 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 14px) 50%;background-size:6px 6px;background-repeat:no-repeat}
+input:focus,select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(47,123,245,.25)}
+.err input,.err select{border-color:var(--danger)}
+.em{display:none;color:var(--danger);font-size:12px;margin-top:5px}
+.err .em{display:block}
+.formcard .btn{width:100%;margin-top:20px}
+.tiny{font-size:12px;color:var(--mut);margin-top:10px;text-align:center}
+.ok{display:none;text-align:center;padding:26px 6px}
+.ok b{display:block;font-size:22px;margin:10px 0 6px}
+.ok .c{width:60px;height:60px;border-radius:50%;background:rgba(37,211,102,.16);color:var(--green);display:grid;place-items:center;font-size:30px;margin:0 auto}
+section{padding:46px 0;border-top:1px solid var(--line)}
+section h2.t{font-size:clamp(24px,3.6vw,34px);line-height:1.15;font-weight:800;margin-bottom:8px;letter-spacing:-.01em}
+section p.sub{color:var(--mut);margin-bottom:24px;max-width:620px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+.card b{display:block;margin-bottom:5px;font-size:16px}
+.card span{color:var(--mut);font-size:14px}
+.ico{font-size:24px;margin-bottom:10px}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.steps .card:before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--blue);font-weight:800;margin-bottom:12px}
+.cases{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.cases .card b{color:#9cc0ff}
+.quote{margin-top:14px;background:var(--bg2);border-left:3px solid var(--blue);padding:16px 18px;border-radius:12px;color:#dbe6f8}
+.quote small{display:block;color:var(--mut);margin-top:6px}
+.cta{text-align:center;background:linear-gradient(135deg,#123a7a,#0a2350);border:1px solid rgba(255,255,255,.16);border-radius:24px;padding:40px 20px;margin:46px 0}
+.cta h2{font-size:clamp(24px,4vw,36px);margin-bottom:8px}
+.cta p{color:#c6d6ef;margin-bottom:22px}
+.cta .btnrow{justify-content:center}
+footer{padding:26px 0 40px;color:var(--mut);font-size:13px;text-align:center}
+footer a{color:#9cc0ff}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:rgba(6,20,43,.94);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:10px 14px calc(10px + env(safe-area-inset-bottom));display:flex;gap:10px}
+.bar .btn{flex:1;padding:14px 10px;font-size:15px}
+@media(max-width:860px){.hero{grid-template-columns:1fr;gap:26px;padding-top:10px}.grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.cases{grid-template-columns:1fr}.tel span{display:none}}
+@media(min-width:861px){.bar{display:none}body{padding-bottom:0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="logo"><div>NAF<small>Biznesni avtomatlashtirish</small></div></div>
+  <a class="tel" href="tel:+998330020213" data-call>📞 <span>+998 33 002 02 13</span></a>
+</header>
+
+<main>
+<div class="hero">
+  <div>
+    <span class="badge">Bito ERP rasmiy hamkori · Namangan · Andijon · Farg'ona</span>
+    <h1>Biznesingiz daftarda emas, <em>tizimda</em> ishlasin</h1>
+    <p class="lead">Ombor minuslari va tartibsizlikni kamaytiring. Ishlab chiqarish, ombor va savdoni bitta tizimda boshqaring.</p>
+    <ul class="ticks">
+      <li>Bepul tahlil: biznesingizda pul qayerda yo'qolayotganini ko'rsatamiz</li>
+      <li>Tizimni biznesingizga moslab sozlaymiz va jamoani o'qitamiz</li>
+      <li>Joriy qilgandan keyin ham yoningizda qolamiz</li>
+    </ul>
+    <div class="btnrow">
+      <a class="btn p" href="#forma">Bepul tahlil olish</a>
+      <a class="btn g" href="tel:+998330020213" data-call>📞 Hoziroq qo'ng'iroq qiling</a>
+    </div>
+    <p class="note">Narx biznesingizga qarab belgilanadi, bepul tahlildan keyin aytiladi.</p>
+  </div>
+
+  <div class="formcard" id="forma">
+    <form id="f" novalidate>
+      <h2>Bepul tahlilga yoziling</h2>
+      <p class="s">3 ta maydon, 30 soniya. Tez orada o'zimiz bog'lanamiz.</p>
+      <div class="fld" id="f-biz"><label for="biz">1. Qanday biznes bilan shug'ullanasiz?</label>
+        <select id="biz"><option value="">Tanlang…</option><option>Ishlab chiqarish (fabrika, sex)</option><option>Ombor / ulgurji savdo</option><option>Do'kon / chakana savdo</option><option>Qurilish materiallari</option><option>To'qimachilik / paypoq / poyabzal</option><option>Qadoq / karton ishlab chiqarish</option><option>Filialli biznes</option><option>Boshqa</option></select>
+        <div class="em">Biznes turini tanlang</div></div>
+      <div class="fld" id="f-name"><label for="name">2. Ismingiz</label><input id="name" autocomplete="name" placeholder="Masalan: Aziz"><div class="em">Ismingizni yozing</div></div>
+      <div class="fld" id="f-phone"><label for="phone">3. Telefon raqamingiz</label><input id="phone" type="tel" inputmode="tel" autocomplete="tel" value="+998 " placeholder="+998 90 123 45 67"><div class="em">Telefon raqamni to'liq kiriting</div></div>
+      <button class="btn p" id="send" type="submit">Bepul tahlil olish</button>
+      <p class="tiny">Ma'lumotlaringiz uchinchi shaxsga berilmaydi</p>
+    </form>
+    <div class="ok" id="ok"><div class="c">✓</div><b>Rahmat, tez orada bog'lanamiz</b><span style="color:var(--mut)">Kutishni xohlamasangiz, o'zingiz qo'ng'iroq qiling:</span><br><br><a class="btn g" href="tel:+998330020213" data-call>📞 +998 33 002 02 13</a></div>
+  </div>
+</div>
+
+<section>
+  <h2 class="t">Tanish muammolar?</h2>
+  <p class="sub">Aksariyat korxonalarda shu 5 ta muammo uchraydi. Bularni tizim hal qiladi.</p>
+  <div class="grid">
+    <div class="card"><div class="ico">📒</div><b>Hamma narsa daftarda yoki Excel'da</b><span>Xato ko'p, vaqt ko'p ketadi.</span></div>
+    <div class="card"><div class="ico">📦</div><b>Ombor minusi</b><span>Qoldiq to'g'ri chiqmaydi, tovar yo'qoladi.</span></div>
+    <div class="card"><div class="ico">🧮</div><b>Tannarx noma'lum</b><span>Qaysi mahsulot foyda berayotganini bilmaysiz.</span></div>
+    <div class="card"><div class="ico">🔥</div><b>Rahbar mayda ishlarga ko'milgan</b><span>Har kuni "yong'in o'chirish" bilan band.</span></div>
+    <div class="card"><div class="ico">🏬</div><b>Filial hisobotlari kechikadi</b><span>Raqamlar qo'ldan-qo'lga yuradi.</span></div>
+    <div class="card" style="background:var(--blue);border-color:var(--blue)"><div class="ico">👉</div><b>Yechim bor</b><a href="#forma" style="text-decoration:underline">Bepul tahlilga yoziling</a></div>
+  </div>
+</section>
+
+<section>
+  <h2 class="t">Bito ERP / Bito POS bilan nima o'zgaradi</h2>
+  <p class="sub">NAF — Bito ERP'ning rasmiy hamkori. Dasturni biz ishlab chiqarmaymiz, biznesingizga joriy qilamiz va sozlaymiz.</p>
+  <div class="grid">
+    <div class="card"><b>Ishlab chiqarish va tannarx</b><span>Xom-ashyodan tayyor mahsulotgacha sarf va tannarx nazorati.</span></div>
+    <div class="card"><b>Ombor nazorati</b><span>Qoldiq, kirim-chiqim, minuslarni kamaytirish.</span></div>
+    <div class="card"><b>Savdo va POS kassa</b><span>Sotuv, mijozlar, qarzlar, chegirma, qaytarish.</span></div>
+    <div class="card"><b>Barcha filiallar bir ekranda</b><span>Qaysi filial qancha tushum qilgani real vaqtda.</span></div>
+    <div class="card"><b>Moliya va hisobotlar</b><span>Tovar bo'yicha foyda, marja, sotilmay yotgan tovar.</span></div>
+    <div class="card"><b>Telefonda ham, kompyuterda ham</b><span>Biznesni uydan turib ko'rasiz.</span></div>
+  </div>
+  <p class="note" style="margin-top:16px">Avtomatlashtirish yo'qotishlarni kamaytirib, yillik foydani 20–30% gacha oshirish imkonini berishi mumkin. Bu kafolat emas, imkoniyat.</p>
+</section>
+
+<section>
+  <h2 class="t">Qanday ishlaymiz</h2>
+  <p class="sub">4 qadam, har birida yoningizdamiz.</p>
+  <div class="steps">
+    <div class="card"><b>Bepul tahlil</b><span>Biznesingizni o'rganamiz, muammolarni topamiz.</span></div>
+    <div class="card"><b>Sozlash</b><span>Tizimni sizning jarayonlaringizga moslaymiz.</span></div>
+    <div class="card"><b>O'qitish</b><span>Jamoangizga ishlashni o'rgatamiz.</span></div>
+    <div class="card"><b>Qo'llab-quvvatlash</b><span>Joriy qilgandan keyin ham yordam beramiz.</span></div>
+  </div>
+</section>
+
+<section>
+  <h2 class="t">Real korxonalar, real natija</h2>
+  <p class="sub">Shu korxonalarga Bito ERP'ni biz joriy qilganmiz.</p>
+  <div class="cases">
+    <div class="card"><b>Mega Pack · Chust</b><span>Karton va qog'oz qadoq. 2 oy oldin joriy qilingan.</span></div>
+    <div class="card"><b>Trendy-Socks · Shaxrixon</b><span>Paypoq fabrikasi. 1 yil oldin joriy qilingan.</span></div>
+    <div class="card"><b>Poyabzal ishlab chiqarish · Marg'ilon</b><span>2024-yilda joriy qilingan.</span></div>
+    <div class="card"><b>Beton zavodi · Yangiqo'rg'on</b><span>2024-yildan beri ombor, ishlab chiqarish va savdo bitta tizimda.</span></div>
+  </div>
+  <div class="quote">“Excel'da vaqt ko'p ketar, xato bo'lar edi. Endi kerakli ma'lumotni istalgan vaqtda tizimdan ko'rish mumkin.”<small>Mega Pack mijozi fikri asosida</small></div>
+</section>
+
+<div class="cta">
+  <h2>Biznesingizda pul qayerda yo'qolayotganini bilib oling</h2>
+  <p>Bepul tahlil. Narx tahlildan keyin, biznesingizga qarab belgilanadi.</p>
+  <div class="btnrow"><a class="btn p" href="#forma">Bepul tahlil olish</a><a class="btn g" href="tel:+998330020213" data-call>📞 +998 33 002 02 13</a></div>
+</div>
+</main>
+
+<footer>
+  NAF | Biznesni avtomatlashtirish · Bito ERP rasmiy hamkori<br>
+  <a href="https://www.instagram.com/naf.pos.erp/" target="_blank" rel="noopener">Instagram @naf.pos.erp</a> · <a href="tel:+998330020213" data-call>+998 33 002 02 13</a>
+</footer>
+</div>
+
+<div class="bar"><a class="btn g" href="tel:+998330020213" data-call>📞 Qo'ng'iroq</a><a class="btn p" href="#forma">Bepul tahlil</a></div>
+
+<script>
+// ===== SOZLAMALAR =====
+const SUBMIT_URL = "https://geron-wheat.vercel.app/api/hook/1b33e096aeef4604af24613b411ea506"; // Geron CRM: Naf pro
+const PIXEL_ID = ""; // Meta Pixel (Dataset) ID — Events Manager'dan olib shu yerga yozing
+
+// ===== META PIXEL =====
+function loadPixel(){
+  if(!PIXEL_ID) return;
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init',PIXEL_ID); fbq('track','PageView');
+}
+loadPixel();
+const track=(ev,data,opt)=>{ try{ if(window.fbq) fbq('track',ev,data||{},opt||{}); }catch(_){} };
+document.querySelectorAll('[data-call]').forEach(a=>a.addEventListener('click',()=>track('Contact',{content_name:'call'})));
+
+// ===== FORMA =====
+const $=id=>document.getElementById(id);
+const phone=$('phone');
+phone.addEventListener('input',()=>{
+  let d=phone.value.replace(/\D/g,''); if(d.startsWith('998')) d=d.slice(3); d=d.slice(0,9);
+  let o='+998 '; if(d.length>0) o+=d.slice(0,2); if(d.length>2) o+=' '+d.slice(2,5); if(d.length>5) o+=' '+d.slice(5,7); if(d.length>7) o+=' '+d.slice(7,9);
+  phone.value=o;
+});
+phone.addEventListener('focus',()=>{ if(!phone.value.trim()) phone.value='+998 '; });
+const bad=(id,cond)=>{ $(id).classList.toggle('err',cond); return !cond; };
+let sending=false;
+$('f').addEventListener('submit',async e=>{
+  e.preventDefault(); if(sending) return;
+  const okB=bad('f-biz',!$('biz').value), okN=bad('f-name',$('name').value.trim().length<2), okP=bad('f-phone',phone.value.replace(/\D/g,'').length!==12);
+  if(!(okB&&okN&&okP)) return;
+  sending=true; const btn=$('send'); btn.disabled=true; btn.textContent='Yuborilmoqda...';
+  const leadId='L'+Date.now().toString(36)+Math.random().toString(36).slice(2,7);
+  try{
+    const q=new URLSearchParams(location.search), ck=n=>(document.cookie.match(new RegExp('(?:^|; )'+n+'=([^;]*)'))||[])[1]||'';
+    const fbclid=q.get('fbclid')||'';
+    const body={name:$('name').value.trim(),phone:phone.value.trim(),message:'Biznes turi: '+$('biz').value,biznes_turi:$('biz').value,lead_id:leadId,fbp:ck('_fbp'),fbc:ck('_fbc')||(fbclid?'fb.1.'+Date.now()+'.'+fbclid:''),fbclid,source_url:location.href};
+    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(k=>{ if(q.get(k)) body[k]=q.get(k); });
+    const ctl=new AbortController(); setTimeout(()=>ctl.abort(),5000);
+    await fetch(SUBMIT_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),keepalive:true,signal:ctl.signal});
+  }catch(_){}
+  // Lead hodisasi (eventID — CAPI bilan takrorlanmasligi uchun)
+  track('Lead',{content_name:$('biz').value},{eventID:leadId});
+  $('f').style.display='none'; $('ok').style.display='block';
+  $('forma').scrollIntoView({behavior:'smooth',block:'center'});
+});
+</script>
+</body>
+</html>
