@@ -151,7 +151,15 @@ footer a{color:#9cc0ff}
 <script>
 const SUBMIT_URL = "https://geron-wheat.vercel.app/api/hook/1b33e096aeef4604af24613b411ea506"; // Geron CRM: Naf pro
 const track=(ev,data,opt)=>{ try{ if(window.fbq) fbq('track',ev,data||{},opt||{}); }catch(_){} };
-document.querySelectorAll('[data-call]').forEach(a=>a.addEventListener('click',()=>track('Contact',{content_name:'call'})));
+const CALL_URL = SUBMIT_URL.replace('/api/hook/','/api/call/');
+const utmData=()=>{ const q=new URLSearchParams(location.search), o={}; ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid'].forEach(k=>{ if(q.get(k)) o[k]=q.get(k); }); return o; };
+const ckv=n=>(document.cookie.match(new RegExp('(?:^|; )'+n+'=([^;]*)'))||[])[1]||'';
+// Qo'ng'iroq tugmasi bosilganda: Meta'ga Contact (UTM bilan) va Geron'ga yozuv (qaysi reklamadan bosilgani)
+document.querySelectorAll('[data-call]').forEach(a=>a.addEventListener('click',()=>{
+  const u=utmData();
+  track('Contact',Object.assign({content_name:'call'},u));
+  try{ navigator.sendBeacon(CALL_URL,new Blob([JSON.stringify(Object.assign({},u,{fbp:ckv('_fbp'),page:location.pathname}))],{type:'text/plain'})); }catch(_){}
+}));
 
 const $=id=>document.getElementById(id);
 // Forma ekranda ko'ringanda pastdagi "Bepul tahlil" tugmasi yashirinadi (ikki xil bir xil tugma bo'lmasin)
